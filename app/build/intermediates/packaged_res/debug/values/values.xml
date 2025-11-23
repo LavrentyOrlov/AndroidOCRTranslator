@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorOnPrimary">#000000</color>
+    <color name="colorPrimary">#09c1e6</color>
+    <color name="colorPrimaryVariant">#22a318</color>
+    <color name="golden_yellow">#e6da09</color>
+    <color name="light_lime">#c3fa0c</color>
+    <color name="pink">#fcc7c7</color>
+    <string name="app_name">ImageTranslatorAppXML</string>
+    <style name="Base.Theme.ImageTranslatorAppXML" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+    </style>
+    <style name="Theme.ImageTranslatorAppXML" parent="Base.Theme.ImageTranslatorAppXML"/>
+</resources>

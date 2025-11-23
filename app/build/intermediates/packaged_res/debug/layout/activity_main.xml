@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Galaxy Background -->
+    <ImageView
+        android:id="@+id/galaxyImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.7"
+        android:contentDescription="Background image"
+        android:scaleType="centerCrop"
+        android:src="@drawable/galaxy" />
+
+    <!-- Earth Image (Centered, Scalable, Adjustable) -->
+    <ImageView
+        android:id="@+id/earthImage"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:alpha="0.8"
+        android:contentDescription="Earth image"
+        android:scaleType="centerCrop"
+        android:src="@drawable/earth"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/galaxyImage"
+        tools:ignore="MissingConstraints" />
+
+
+    <!-- Starting Language Label: English -->
+    <TextView
+        android:id="@+id/startingLanguageText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="Start with: Auto detect 📌✨"
+        android:textColor="@color/light_lime"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="-4dp"
+        android:layout_marginTop="-12dp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Translate To Label -->
+    <TextView
+        android:id="@+id/translateToLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingStart="8dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="4dp"
+        android:text="Translate to: 🌍"
+        android:textColor="@color/light_lime"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/startingLanguageText"
+        android:layout_marginTop="-15dp"
+        android:layout_marginStart="-4dp"/>
+
+    <!-- Target Translation Language Spinner -->
+    <Spinner
+        android:id="@+id/spinnerTargetLang"
+        android:layout_width="250dp"
+        android:layout_height="48dp"
+        android:background="@color/golden_yellow"
+        android:popupBackground="@color/colorPrimary"
+        android:textColor="@color/light_lime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/translateToLabel"
+        android:layout_marginTop="5dp"/>
+
+    <!-- Select Image Button -->
+    <Button
+        android:id="@+id/selectImageButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="@color/light_lime"
+        android:text="📸🖼️"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/galaxyImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinnerTargetLang"
+        app:layout_constraintVertical_bias="0.32" />
+
+    <!-- Image Preview -->
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="Your Selected Image"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/selectImageButton" />
+
+    <!-- Original Text Label: English -->
+    <TextView
+        android:id="@+id/originalTextLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Original: 🖼️"
+        android:textColor="@color/light_lime"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_view" />
+
+    <!-- Original Text ScrollView -->
+    <ScrollView
+        android:id="@+id/originalTextScroll"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:alpha="0.0"
+        android:background="@color/colorOnPrimary"
+        android:fadeScrollbars="false"
+        android:fadingEdge="vertical"
+        android:fillViewport="true"
+        android:scrollbarStyle="insideOverlay"
+        android:scrollbarThumbVertical="@drawable/scrollbar_thumb"
+        android:scrollbars="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/originalTextLabel">
+
+        <TextView
+            android:id="@+id/originalTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textColor="@color/golden_yellow"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </ScrollView>
+
+    <!-- Copy Original Text Button -->
+    <Button
+        android:id="@+id/copyOriginalButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/golden_yellow"
+        android:text="Copy Original Text 📋📷"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/originalTextScroll" />
+
+    <!-- Translated Text Label -->
+    <TextView
+        android:id="@+id/translatedTextLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Translated: 🌍"
+        android:textColor="@color/light_lime"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/copyOriginalButton" />
+
+    <!-- Translated Text ScrollView -->
+    <ScrollView
+        android:id="@+id/translatedTextScroll"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:alpha="0.0"
+        android:background="@color/colorOnPrimary"
+        android:fadeScrollbars="false"
+        android:fadingEdge="vertical"
+        android:fillViewport="true"
+        android:scrollbarStyle="insideOverlay"
+        android:scrollbarThumbVertical="@drawable/scrollbar_thumb"
+        android:scrollbars="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/translatedTextLabel">
+
+        <TextView
+            android:id="@+id/translatedTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textColor="@color/golden_yellow"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </ScrollView>
+
+    <!-- Copy Translated Text Button -->
+    <Button
+        android:id="@+id/copyTranslatedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="@color/golden_yellow"
+        android:text="Copy Translated Text 📋🎉"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/translatedTextScroll" />
+
+    <!-- Coin Counter Text -->
+    <TextView
+        android:id="@+id/coinTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginStart="12dp"
+        android:text="🪙: 0"
+        android:textColor="@color/light_lime"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/spinnerTargetLang"
+        app:layout_constraintStart_toEndOf="@id/spinnerTargetLang"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="16dp"
+        app:layout_constraintTop_toTopOf="@id/spinnerTargetLang"
+        app:layout_constraintBottom_toBottomOf="@id/spinnerTargetLang"
+        app:layout_constraintStart_toEndOf="@id/spinnerTargetLang"
+        app:layout_constraintEnd_toStartOf="@id/selectImageButton">
+
+        <!-- Arrow Image -->
+        <ImageView
+            android:id="@+id/arrowImage"
+            android:layout_width="60dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="2dp"
+            android:src="@drawable/arrow"
+            app:layout_constraintVertical_bias="0.146" />
+
+    </LinearLayout>
+
+    <!-- Eagle Image (Fixed Size) -->
+    <ImageView
+        android:id="@+id/eagleImage"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:layout_marginTop="250dp"
+        android:src="@drawable/eagle"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Trophy Celebration Emoji Image -->
+    <ImageView
+        android:id="@+id/celebrationEmoji"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0"
+        android:contentDescription="Celebration Emoji"
+        android:src="@drawable/trophy"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- In progress: "Loading" text! -->
+    <TextView
+        android:id="@+id/loadingText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:padding="8dp"
+        android:text="Loading... ⏳"
+        android:background="@color/colorOnPrimary"
+        android:textColor="@color/pink"
+        android:textSize="65sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/copyOriginalButton" />
+
+    <!-- Dim Screen Overlay -->
+    <View
+        android:id="@+id/dimOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:visibility="gone" />
+</androidx.constraintlayout.widget.ConstraintLayout>

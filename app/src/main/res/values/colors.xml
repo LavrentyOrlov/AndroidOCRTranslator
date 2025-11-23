@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#09c1e6</color>          <!-- Light sky blue -->
+    <color name="colorPrimaryVariant">#22a318</color>   <!-- Warm amber -->
+    <color name="colorOnPrimary">#000000</color>        <!-- Black text on yellow -->
+    <color name="golden_yellow">#e6da09</color>         <!-- Previous version: #bfbf19 -->
+    <color name="light_lime">#c3fa0c</color>
+    <color name="pink">#fcc7c7</color>
+</resources>
