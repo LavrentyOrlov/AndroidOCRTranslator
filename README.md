@@ -2,7 +2,7 @@
 # Project Name: Android OCR Translator
 
 ## Project Info
-- Date: July 2025 - present
+- Date: June 2025 - present
 - Created by: Lavrenty "Larry" Orlov
 
 ## Overview
